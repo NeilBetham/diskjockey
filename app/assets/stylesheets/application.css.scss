@@ -13,3 +13,10 @@
  *= require_tree .
  *= require_self
  */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+$nprogress-color: #33db9b;
+@import 'nprogress';
+@import 'nprogress-bootstrap';
