@@ -40,3 +40,7 @@ gem 'capistrano-rails', group: :development
 
 # Google for authentication
 gem 'google-api-client', '~> 0.7.1'
+
+# Send notifications via SMS
+gem 'sms_fu', git: 'https://github.com/brendanlim/sms-fu.git'
+gem 'pony', '~> 1.9'

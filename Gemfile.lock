@@ -1,3 +1,9 @@
+GIT
+  remote: https://github.com/brendanlim/sms-fu.git
+  revision: 2936f6dbb34b2b658c48bf2e527de9433188b604
+  specs:
+    sms_fu (1.1.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -91,6 +97,8 @@ GEM
       net-ssh (>= 2.6.5)
     net-ssh (2.9.1)
     polyglot (0.3.5)
+    pony (1.9)
+      mail (>= 2.0)
     rack (1.5.2)
     rack-test (0.6.2)
       rack (>= 1.0)
@@ -166,9 +174,11 @@ DEPENDENCIES
   google-api-client (~> 0.7.1)
   jbuilder (~> 2.0)
   jquery-rails
+  pony (~> 1.9)
   rails (= 4.1.1)
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
+  sms_fu!
   spring
   sqlite3
   turbolinks
