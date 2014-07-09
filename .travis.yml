@@ -4,4 +4,4 @@ rvm:
   - 2.1.2
 before_script:
   - cp config/database.yml.example config/database.yml
-  - rake db:migrate
+  - bundle exec rake db:migrate
