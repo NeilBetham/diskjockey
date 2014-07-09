@@ -44,3 +44,16 @@ gem 'google-api-client', '~> 0.7.1'
 # Send notifications via SMS
 gem 'sms_fu', git: 'https://github.com/brendanlim/sms-fu.git'
 gem 'pony', '~> 1.9'
+
+# Background tasks handled by resque
+gem 'resque', '~> 1.25.1', require: 'resque/server'
+gem 'resque-scheduler', '~> 3.0.0'
+gem 'resque_mailer'
+
+# Premailer for email style inlining
+gem 'premailer-rails', '~> 1.7.0'
+gem 'nokogiri', '~> 1.6.2.1'
+
+# Performance monitoring
+gem 'rack-mini-profiler'
+gem 'flamegraph', '~> 0.0.5'
