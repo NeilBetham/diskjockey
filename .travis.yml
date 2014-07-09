@@ -2,6 +2,6 @@ language: ruby
 cache: bundler
 rvm:
   - 2.1.2
-before_install:
+before_script:
   - cp config/database.yml.example config/database.yml
   - rake db:migrate
