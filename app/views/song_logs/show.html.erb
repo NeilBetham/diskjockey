@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Cd number:</strong>
+  <%= @song_log.cd_number %>
+</p>
+
+<p>
+  <strong>Song name:</strong>
+  <%= @song_log.song_name %>
+</p>
+
+<p>
+  <strong>Artist:</strong>
+  <%= @song_log.artist %>
+</p>
+
+<p>
+  <strong>Genre:</strong>
+  <%= @song_log.genre %>
+</p>
+
+<p>
+  <strong>Album:</strong>
+  <%= @song_log.album %>
+</p>
+
+<p>
+  <strong>Score:</strong>
+  <%= @song_log.score %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @song_log.location %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @song_log.user %>
+</p>
+
+<%= link_to 'Edit', edit_song_log_path(@song_log) %> |
+<%= link_to 'Back', song_logs_path %>

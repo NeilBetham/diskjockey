@@ -1,0 +1,39 @@
+<h1>Listing song_logs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Cd number</th>
+      <th>Song name</th>
+      <th>Artist</th>
+      <th>Genre</th>
+      <th>Album</th>
+      <th>Score</th>
+      <th>Location</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @song_logs.each do |song_log| %>
+      <tr>
+        <td><%= song_log.cd_number %></td>
+        <td><%= song_log.song_name %></td>
+        <td><%= song_log.artist %></td>
+        <td><%= song_log.genre %></td>
+        <td><%= song_log.album %></td>
+        <td><%= song_log.score %></td>
+        <td><%= song_log.location %></td>
+        <td><%= song_log.user %></td>
+        <td><%= link_to 'Show', song_log %></td>
+        <td><%= link_to 'Edit', edit_song_log_path(song_log) %></td>
+        <td><%= link_to 'Destroy', song_log, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Song log', new_song_log_path %>

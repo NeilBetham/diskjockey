@@ -11,16 +11,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140709220914) do
+ActiveRecord::Schema.define(version: 20140710005152) do
+
+  create_table "song_logs", force: true do |t|
+    t.string   "cd_number"
+    t.string   "song_name"
+    t.string   "artist"
+    t.string   "genre"
+    t.string   "album"
+    t.integer  "score"
+    t.string   "location"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "song_logs", ["user_id"], name: "index_song_logs_on_user_id"
 
   create_table "users", force: true do |t|
-    t.string   "username"
     t.string   "email"
     t.string   "phone"
     t.string   "phone_carrier"
     t.text     "google_api_token"
+    t.string   "role"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["phone"], name: "index_users_on_phone", unique: true
 
 end

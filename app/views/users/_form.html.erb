@@ -12,10 +12,6 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :username %><br>
-    <%= f.text_field :username %>
-  </div>
-  <div class="field">
     <%= f.label :email %><br>
     <%= f.text_field :email %>
   </div>
@@ -30,6 +26,10 @@
   <div class="field">
     <%= f.label :google_api_token %><br>
     <%= f.text_area :google_api_token %>
+  </div>
+  <div class="field">
+    <%= f.label :role %><br>
+    <%= f.text_field :role %>
   </div>
   <div class="actions">
     <%= f.submit %>

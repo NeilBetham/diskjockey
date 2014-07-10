@@ -1,0 +1,2 @@
+module SongLogsHelper
+end
