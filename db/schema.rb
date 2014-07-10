@@ -11,7 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140710005152) do
+ActiveRecord::Schema.define(version: 20140710010855) do
+
+  create_table "shows", force: true do |t|
+    t.string   "name"
+    t.integer  "user_id"
+    t.time     "start_time"
+    t.time     "stop_time"
+    t.integer  "day_of_week"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "shows", ["user_id"], name: "index_shows_on_user_id"
 
   create_table "song_logs", force: true do |t|
     t.string   "cd_number"
