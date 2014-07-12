@@ -1,6 +1,7 @@
 GIT
   remote: https://github.com/brendanlim/sms-fu.git
   revision: 2936f6dbb34b2b658c48bf2e527de9433188b604
+  ref: 2936f6dbb34b2b658c48bf2e527de9433188b604
   specs:
     sms_fu (1.1.1)
 
@@ -41,6 +42,7 @@ GEM
       addressable (>= 2.3.1)
       extlib (>= 0.9.15)
       multi_json (>= 1.0.0)
+    bcrypt (3.1.7)
     bootstrap-sass (3.2.0.0)
       sass (~> 3.2)
     builder (3.2.2)
@@ -108,6 +110,7 @@ GEM
     mono_logger (1.1.0)
     multi_json (1.10.1)
     multipart-post (2.0.0)
+    mysql2 (0.3.16)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
     net-ssh (2.9.1)
@@ -224,6 +227,7 @@ PLATFORMS
 
 DEPENDENCIES
   active_model_serializers (~> 0.8.1)
+  bcrypt (~> 3.1.7)
   bootstrap-sass (~> 3.2.0.0)
   cancancan (~> 1.8.4)
   capistrano-rails
@@ -231,20 +235,21 @@ DEPENDENCIES
   flamegraph (~> 0.0.5)
   google-api-client (~> 0.7.1)
   jbuilder (~> 2.0)
-  jquery-rails
+  jquery-rails (~> 3.1.1)
+  mysql2 (~> 0.3.16)
   nokogiri (~> 1.6.2.1)
   nprogress-rails (~> 0.1.3.0)
   pony (~> 1.9)
   premailer-rails (~> 1.7.0)
-  rack-mini-profiler
+  rack-mini-profiler (~> 0.9.2)
   rails (= 4.1.1)
   resque (~> 1.25.1)
   resque-scheduler (~> 3.0.0)
-  resque_mailer
+  resque_mailer (~> 2.2.6)
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
   sms_fu!
   spring
-  sqlite3
-  turbolinks
+  sqlite3 (~> 1.3.9)
+  turbolinks (~> 2.2.2)
   uglifier (>= 1.3.0)
