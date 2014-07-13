@@ -75,3 +75,8 @@ gem 'cancancan', '~> 1.8.4'
 
 # ActiveModelSerializers for api serialization
 gem 'active_model_serializers', '~> 0.8.1'
+
+# Mapping out relationships
+group :development, :test do
+  gem 'railroady'
+end

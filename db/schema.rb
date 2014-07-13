@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140713010404) do
+ActiveRecord::Schema.define(version: 20140713020420) do
 
   create_table "discrepancy_logs", force: true do |t|
     t.integer  "user_id"
@@ -43,6 +43,36 @@ ActiveRecord::Schema.define(version: 20140713010404) do
     t.integer "user_id"
   end
 
+  create_table "dj_schedules", force: true do |t|
+    t.date     "start_date"
+    t.date     "stop_date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "dj_slots", force: true do |t|
+    t.integer  "dj_schedule_id"
+    t.time     "start_time"
+    t.time     "stop_time"
+    t.integer  "day_of_week"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "dj_slots", ["dj_schedule_id"], name: "index_dj_slots_on_dj_schedule_id"
+
+  create_table "show_archives", force: true do |t|
+    t.integer  "show_id"
+    t.text     "file"
+    t.text     "location"
+    t.boolean  "error"
+    t.text     "reason"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "show_archives", ["show_id"], name: "index_show_archives_on_show_id"
+
   create_table "shows", force: true do |t|
     t.string   "name"
     t.integer  "user_id"
@@ -54,8 +84,10 @@ ActiveRecord::Schema.define(version: 20140713010404) do
     t.text     "show_blurb"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "dj_slot_id"
   end
 
+  add_index "shows", ["dj_slot_id"], name: "index_shows_on_dj_slot_id"
   add_index "shows", ["user_id"], name: "index_shows_on_user_id"
 
   create_table "shows_users", id: false, force: true do |t|

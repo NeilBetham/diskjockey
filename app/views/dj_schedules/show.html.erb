@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Start date:</strong>
+  <%= @dj_schedule.start_date %>
+</p>
+
+<p>
+  <strong>Stop date:</strong>
+  <%= @dj_schedule.stop_date %>
+</p>
+
+<%= link_to 'Edit', edit_dj_schedule_path(@dj_schedule) %> |
+<%= link_to 'Back', dj_schedules_path %>

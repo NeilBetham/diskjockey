@@ -1,0 +1,25 @@
+<%= form_for(@dj_schedule) do |f| %>
+  <% if @dj_schedule.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@dj_schedule.errors.count, "error") %> prohibited this dj_schedule from being saved:</h2>
+
+      <ul>
+      <% @dj_schedule.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :start_date %><br>
+    <%= f.date_select :start_date %>
+  </div>
+  <div class="field">
+    <%= f.label :stop_date %><br>
+    <%= f.date_select :stop_date %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

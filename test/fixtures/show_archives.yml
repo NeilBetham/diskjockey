@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  show_id: 
+  file: MyText
+  location: MyText
+  error: false
+  reason: MyText
+
+two:
+  show_id: 
+  file: MyText
+  location: MyText
+  error: false
+  reason: MyText

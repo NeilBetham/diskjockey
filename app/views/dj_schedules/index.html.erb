@@ -1,0 +1,27 @@
+<h1>Listing dj_schedules</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Start date</th>
+      <th>Stop date</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @dj_schedules.each do |dj_schedule| %>
+      <tr>
+        <td><%= dj_schedule.start_date %></td>
+        <td><%= dj_schedule.stop_date %></td>
+        <td><%= link_to 'Show', dj_schedule %></td>
+        <td><%= link_to 'Edit', edit_dj_schedule_path(dj_schedule) %></td>
+        <td><%= link_to 'Destroy', dj_schedule, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Dj schedule', new_dj_schedule_path %>

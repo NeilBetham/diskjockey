@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :dj_schedules
+
   resources :dj_applications
 
   resources :discrepancy_logs
