@@ -1,0 +1,35 @@
+<h1>Listing discrepancy_logs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Song name</th>
+      <th>Artist</th>
+      <th>Word</th>
+      <th>Cd number</th>
+      <th>Button pressed</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @discrepancy_logs.each do |discrepancy_log| %>
+      <tr>
+        <td><%= discrepancy_log.user %></td>
+        <td><%= discrepancy_log.song_name %></td>
+        <td><%= discrepancy_log.artist %></td>
+        <td><%= discrepancy_log.word %></td>
+        <td><%= discrepancy_log.cd_number %></td>
+        <td><%= discrepancy_log.button_pressed %></td>
+        <td><%= link_to 'Show', discrepancy_log %></td>
+        <td><%= link_to 'Edit', edit_discrepancy_log_path(discrepancy_log) %></td>
+        <td><%= link_to 'Destroy', discrepancy_log, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Discrepancy log', new_discrepancy_log_path %>

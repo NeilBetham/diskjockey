@@ -1,0 +1,33 @@
+<h1>Listing dj_applications</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Show name</th>
+      <th>Bands or artists played</th>
+      <th>Show genre</th>
+      <th>Show blurb</th>
+      <th>Training time</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @dj_applications.each do |dj_application| %>
+      <tr>
+        <td><%= dj_application.show_name %></td>
+        <td><%= dj_application.bands_or_artists_played %></td>
+        <td><%= dj_application.show_genre %></td>
+        <td><%= dj_application.show_blurb %></td>
+        <td><%= dj_application.training_time %></td>
+        <td><%= link_to 'Show', dj_application %></td>
+        <td><%= link_to 'Edit', edit_dj_application_path(dj_application) %></td>
+        <td><%= link_to 'Destroy', dj_application, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Dj application', new_dj_application_path %>

@@ -6,6 +6,9 @@ class CreateShows < ActiveRecord::Migration
       t.time :start_time
       t.time :stop_time
       t.integer :day_of_week
+      t.text :bands_or_artists_played
+      t.string :show_genre
+      t.text :show_blurb
 
       t.timestamps
     end

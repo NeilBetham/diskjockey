@@ -11,7 +11,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140710010855) do
+ActiveRecord::Schema.define(version: 20140713010404) do
+
+  create_table "discrepancy_logs", force: true do |t|
+    t.integer  "user_id"
+    t.string   "song_name"
+    t.string   "artist"
+    t.string   "word"
+    t.string   "cd_number"
+    t.boolean  "button_pressed"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "show_id"
+  end
+
+  add_index "discrepancy_logs", ["show_id"], name: "index_discrepancy_logs_on_show_id"
+  add_index "discrepancy_logs", ["user_id"], name: "index_discrepancy_logs_on_user_id"
+
+  create_table "dj_application_users", id: false, force: true do |t|
+    t.integer "dj_application_id"
+    t.integer "user_id"
+  end
+
+  create_table "dj_applications", force: true do |t|
+    t.string   "show_name"
+    t.text     "bands_or_artists_played"
+    t.string   "show_genre"
+    t.text     "show_blurb"
+    t.datetime "training_time"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "shows", force: true do |t|
     t.string   "name"
@@ -19,11 +49,19 @@ ActiveRecord::Schema.define(version: 20140710010855) do
     t.time     "start_time"
     t.time     "stop_time"
     t.integer  "day_of_week"
+    t.text     "bands_or_artists_played"
+    t.string   "show_genre"
+    t.text     "show_blurb"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   add_index "shows", ["user_id"], name: "index_shows_on_user_id"
+
+  create_table "shows_users", id: false, force: true do |t|
+    t.integer "show_id"
+    t.integer "user_id"
+  end
 
   create_table "song_logs", force: true do |t|
     t.string   "cd_number"
@@ -48,6 +86,10 @@ ActiveRecord::Schema.define(version: 20140710010855) do
     t.string   "role"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "semesters_on_air"
+    t.text     "relevant_experience"
+    t.string   "employment_status"
+    t.boolean  "radio_staff"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

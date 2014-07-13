@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @discrepancy_log.user %>
+</p>
+
+<p>
+  <strong>Song name:</strong>
+  <%= @discrepancy_log.song_name %>
+</p>
+
+<p>
+  <strong>Artist:</strong>
+  <%= @discrepancy_log.artist %>
+</p>
+
+<p>
+  <strong>Word:</strong>
+  <%= @discrepancy_log.word %>
+</p>
+
+<p>
+  <strong>Cd number:</strong>
+  <%= @discrepancy_log.cd_number %>
+</p>
+
+<p>
+  <strong>Button pressed:</strong>
+  <%= @discrepancy_log.button_pressed %>
+</p>
+
+<%= link_to 'Edit', edit_discrepancy_log_path(@discrepancy_log) %> |
+<%= link_to 'Back', discrepancy_logs_path %>

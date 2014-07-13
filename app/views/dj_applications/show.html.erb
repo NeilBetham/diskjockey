@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Show name:</strong>
+  <%= @dj_application.show_name %>
+</p>
+
+<p>
+  <strong>Bands or artists played:</strong>
+  <%= @dj_application.bands_or_artists_played %>
+</p>
+
+<p>
+  <strong>Show genre:</strong>
+  <%= @dj_application.show_genre %>
+</p>
+
+<p>
+  <strong>Show blurb:</strong>
+  <%= @dj_application.show_blurb %>
+</p>
+
+<p>
+  <strong>Training time:</strong>
+  <%= @dj_application.training_time %>
+</p>
+
+<%= link_to 'Edit', edit_dj_application_path(@dj_application) %> |
+<%= link_to 'Back', dj_applications_path %>
