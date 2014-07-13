@@ -16,6 +16,9 @@
 #= require nprogress
 #= require nprogress-turbolinks
 #= require bootstrap-sprockets
+#= require moment.min
+#= require fullcalendar.min
+#= require jquery-ui.custom.min
 #= require_tree .
 
 NProgress.configure

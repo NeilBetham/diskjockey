@@ -1,3 +1,15 @@
 // Place all the styles related to the DjSchedules controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.external-event {
+  height: 5em;
+  width: 8.4em;
+
+  padding: 2px;
+
+  background-color: lighten(#3a87ad, 10%);
+  border: 1px solid #3a87ad;
+  color: #ffffff;
+
+  border-radius: 3px;
+}
