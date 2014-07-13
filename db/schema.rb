@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20140713010404) do
     t.string   "artist"
     t.string   "word"
     t.string   "cd_number"
-    t.boolean  "button_pressed"
+    t.boolean  "button_pressed", default: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "show_id"
@@ -27,11 +27,6 @@ ActiveRecord::Schema.define(version: 20140713010404) do
 
   add_index "discrepancy_logs", ["show_id"], name: "index_discrepancy_logs_on_show_id"
   add_index "discrepancy_logs", ["user_id"], name: "index_discrepancy_logs_on_user_id"
-
-  create_table "dj_application_users", id: false, force: true do |t|
-    t.integer "dj_application_id"
-    t.integer "user_id"
-  end
 
   create_table "dj_applications", force: true do |t|
     t.string   "show_name"
@@ -41,6 +36,11 @@ ActiveRecord::Schema.define(version: 20140713010404) do
     t.datetime "training_time"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "dj_applications_users", id: false, force: true do |t|
+    t.integer "dj_application_id"
+    t.integer "user_id"
   end
 
   create_table "shows", force: true do |t|
@@ -89,7 +89,7 @@ ActiveRecord::Schema.define(version: 20140713010404) do
     t.integer  "semesters_on_air"
     t.text     "relevant_experience"
     t.string   "employment_status"
-    t.boolean  "radio_staff"
+    t.boolean  "station_staff",       default: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

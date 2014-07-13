@@ -6,7 +6,7 @@ class CreateDiscrepancyLogs < ActiveRecord::Migration
       t.string :artist
       t.string :word
       t.string :cd_number
-      t.boolean :button_pressed
+      t.boolean :button_pressed, default: false
 
       t.timestamps
     end

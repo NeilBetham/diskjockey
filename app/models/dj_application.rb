@@ -10,5 +10,5 @@ class DjApplication < ActiveRecord::Base
 
   has_and_belongs_to_many :users
 
-  validates :name, presence: true
+  validates :show_name, presence: true
 end
