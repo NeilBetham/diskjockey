@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :sub_lists
+
   resources :dj_schedules
 
   resources :dj_applications

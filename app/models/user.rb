@@ -11,4 +11,5 @@ class User < ActiveRecord::Base
   has_many :user_events
   has_and_belongs_to_many :shows
   has_and_belongs_to_many :dj_applications
+  has_and_belongs_to_many :sub_lists
 end

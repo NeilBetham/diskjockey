@@ -1,0 +1,27 @@
+<h1>Listing sub_lists</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sub_lists.each do |sub_list| %>
+      <tr>
+        <td><%= sub_list.name %></td>
+        <td><%= sub_list.description %></td>
+        <td><%= link_to 'Show', sub_list %></td>
+        <td><%= link_to 'Edit', edit_sub_list_path(sub_list) %></td>
+        <td><%= link_to 'Destroy', sub_list, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Sub list', new_sub_list_path %>

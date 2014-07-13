@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @sub_list.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @sub_list.description %>
+</p>
+
+<%= link_to 'Edit', edit_sub_list_path(@sub_list) %> |
+<%= link_to 'Back', sub_lists_path %>
