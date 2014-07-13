@@ -1,4 +1,22 @@
 Rails.application.routes.draw do
+
+  namespace :api do
+    post 'token/get'
+    delete 'token/destroy'
+  end
+
+  namespace :api do
+
+  end
+
+  get 'signup', to: 'users#new', as: 'signup'
+  get 'login', to: 'sessions#new', as: 'login'
+  delete 'logout', to: 'sessions#destroy', as: 'logout'
+
+  get 'dashboard/index'
+
+  resources :sessions, only: %w(new create destroy)
+
   resources :sub_lists
 
   resources :dj_schedules
@@ -13,7 +31,5 @@ Rails.application.routes.draw do
 
   resources :song_logs
 
-  get 'oauth/authorize', to: 'o_auth#authorize'
-  get 'oauth/callback', to: 'o_auth#callback'
-
+  root to: 'dashboard#index'
 end

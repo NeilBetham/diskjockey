@@ -4,8 +4,8 @@ class CreateUsers < ActiveRecord::Migration
       t.string :email
       t.string :phone
       t.string :phone_carrier
-      t.text :google_api_token
       t.string :role
+      t.string :password_digest
 
       t.timestamps
     end

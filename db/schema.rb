@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140713023816) do
+ActiveRecord::Schema.define(version: 20140713215250) do
 
   create_table "discrepancy_logs", force: true do |t|
     t.integer  "user_id"
@@ -125,6 +125,16 @@ ActiveRecord::Schema.define(version: 20140713023816) do
   add_index "sub_lists_users", ["sub_list_id"], name: "index_sub_lists_users_on_sub_list_id"
   add_index "sub_lists_users", ["user_id"], name: "index_sub_lists_users_on_user_id"
 
+  create_table "tokens", force: true do |t|
+    t.integer  "user_id"
+    t.text     "token"
+    t.datetime "valid_till"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "tokens", ["user_id"], name: "index_tokens_on_user_id"
+
   create_table "user_events", force: true do |t|
     t.integer  "user_id"
     t.string   "event_type"
@@ -140,14 +150,16 @@ ActiveRecord::Schema.define(version: 20140713023816) do
     t.string   "email"
     t.string   "phone"
     t.string   "phone_carrier"
-    t.text     "google_api_token"
     t.string   "role"
+    t.string   "password_digest"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "semesters_on_air"
     t.text     "relevant_experience"
     t.string   "employment_status"
     t.boolean  "station_staff",       default: false
+    t.text     "confirmation_token"
+    t.boolean  "confirmed",           default: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

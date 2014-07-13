@@ -10,23 +10,22 @@ class ApplicationController < ActionController::Base
     redirect_to root_url, :alert => exception.message
   end
 
-  # Some ish went down... Lgoout and redirect to login
+  # Some ish went down... Logout and redirect to login
   rescue_from ActiveRecord::RecordNotFound do |exception|
     reset_session
-#    redirect_to login_url
+    redirect_to login_url
   end
 
   private
-
     # Get current user
     def current_user
       @current_user ||= User.find(session[:user_id]) unless session[:user_id].nil?
     end
     helper_method :current_user
 
-     # Check if session is authed
+    # Check if session is authed
     def authenticate
-#      redirect_to login_url, danger: "Please Login" unless current_user
+      redirect_to login_url, danger: "Please Login" unless current_user
     end
 
     def current_ability

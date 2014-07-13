@@ -50,8 +50,8 @@ gem 'capistrano-rails', group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-# Google for authentication
-gem 'google-api-client', '~> 0.7.1'
+# Google for authentication maybe later
+#gem 'google-api-client', '~> 0.7.1'
 
 # Send notifications via SMS
 gem 'sms_fu', git: 'https://github.com/brendanlim/sms-fu.git', ref: '2936f6dbb34b2b658c48bf2e527de9433188b604'

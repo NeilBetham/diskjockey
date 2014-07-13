@@ -1,0 +1,15 @@
+<%= content_for(:title, "Login") %>
+<%= form_tag sessions_path, :class => 'form-signin' do %>
+  <h2 class="form-signin-header">Login</h2>
+  <%= text_field_tag :email, params[:email], :class => 'form-control', :placeholder => "Email" %>
+  <%= password_field_tag :password, params[:password], :class => 'form-control', :placeholder => "Password" %>
+  <%= submit_tag "Log In", :class => 'btn btn-info btn-brand btn-block btn-lg' %>
+<% end %>
+
+<% flash.each do |name, msg| %>
+  <div class="form-signin">
+    <% if msg.is_a?(String) %>
+      <%= content_tag :div, msg, :class => "alert alert-#{name}" %>
+    <% end %>
+  </div>
+<% end %>

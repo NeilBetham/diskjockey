@@ -1,1 +1,0 @@
-!function(){window.DiskjockeyClient=Ember.Application.create()}(),function(){DiskjockeyClient.ApplicationAdapter=DS.FixtureAdapter}(),function(){DiskjockeyClient.ApplicationRoute=Ember.Route.extend({model:function(){return["red","yellow","blue"]}})}(),function(){DiskjockeyClient.Router.map(function(){})}();
