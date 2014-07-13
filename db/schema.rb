@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140713020420) do
+ActiveRecord::Schema.define(version: 20140713023441) do
 
   create_table "discrepancy_logs", force: true do |t|
     t.integer  "user_id"
@@ -109,6 +109,17 @@ ActiveRecord::Schema.define(version: 20140713020420) do
   end
 
   add_index "song_logs", ["user_id"], name: "index_song_logs_on_user_id"
+
+  create_table "user_events", force: true do |t|
+    t.integer  "user_id"
+    t.string   "event_type"
+    t.string   "event_title"
+    t.text     "event_text"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "user_events", ["user_id"], name: "index_user_events_on_user_id"
 
   create_table "users", force: true do |t|
     t.string   "email"
