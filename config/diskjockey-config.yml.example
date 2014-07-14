@@ -1,1 +1,12 @@
-token_expire_time: 2.weeks.from_now
+api_config: &api_config
+  token_expire_time: 2.weeks.from_now
+
+
+development:
+  <<: *api_config
+
+test:
+  <<: *api_config
+
+production:
+  <<: *api_config

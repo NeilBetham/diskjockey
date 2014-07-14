@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  user_id: 
+  user_id: 1
   token: MyText
-  valid_till: 2014-07-13 14:39:07
+  valid_till: 2022-07-13 14:39:07
 
 two:
-  user_id: 
-  token: MyText
-  valid_till: 2014-07-13 14:39:07
+  user_id: 1
+  token: MyText2
+  valid_till: 2022-07-13 14:39:07

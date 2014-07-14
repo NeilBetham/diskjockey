@@ -3,6 +3,7 @@ require 'test_helper'
 class SongLogsControllerTest < ActionController::TestCase
   setup do
     @song_log = song_logs(:one)
+    login_as(:one)
   end
 
   test "should get index" do

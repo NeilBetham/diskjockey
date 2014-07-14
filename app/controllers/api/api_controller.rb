@@ -1,14 +1,17 @@
 class Api::ApiController < ApplicationController
   protect_from_forgery with: :null_session
+
+  skip_before_action :verify_authenticity_token
+  before_action :authenticate
+
   respond_to :json
-  before_action :authorize
 
   private
-    def authorize
-      authorize_token || unauthorized
+    def authenticate
+      authenticate_token || unauthorized
     end
 
-    def authorize_token
+    def authenticate_token
       authenticate_with_http_token do |token, options|
         @token = Token.find_by(token: token)
         @token && @token.valid_till > Time.now
@@ -16,7 +19,7 @@ class Api::ApiController < ApplicationController
     end
 
     def unauthorized
-      render json: {:errors => ["Bad credentials"] }, status: 401
+      render json: { errors: ['Bad credentials'] }, status: 401
     end
 
     def current_user

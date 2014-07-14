@@ -2,13 +2,14 @@ require 'test_helper'
 
 class Api::TokenControllerTest < ActionController::TestCase
   test "should get get" do
-    get :get
+    post :get, email: 'MyString2@mtu.edu', password: 'password'
     assert_response :success
   end
 
-  test "should get destroy" do
-    get :destroy
-    assert_response :success
-  end
+  # test "should get destroy" do
+  #   login_token
+  #   delete :destroy
+  #   assert_response :success
+  # end
 
 end

@@ -1,5 +1,5 @@
-class Api::TokenController < ApplicationController
-  skip_before_action :authorize, only: [:get]
+class Api::TokenController < Api::ApiController
+  skip_before_action :authenticate, only: [:get]
 
   def get
     user = User.find_by(email: params[:email])

@@ -3,6 +3,7 @@ require 'test_helper'
 class SubListsControllerTest < ActionController::TestCase
   setup do
     @sub_list = sub_lists(:one)
+    login_as(:one)
   end
 
   test "should get index" do

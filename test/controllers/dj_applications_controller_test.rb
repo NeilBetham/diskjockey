@@ -3,6 +3,7 @@ require 'test_helper'
 class DjApplicationsControllerTest < ActionController::TestCase
   setup do
     @dj_application = dj_applications(:one)
+    login_as(:one)
   end
 
   test "should get index" do

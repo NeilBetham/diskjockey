@@ -3,6 +3,7 @@ require 'test_helper'
 class ShowsControllerTest < ActionController::TestCase
   setup do
     @show = shows(:one)
+    login_as(:one)
   end
 
   test "should get index" do

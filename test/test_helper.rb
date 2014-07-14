@@ -10,4 +10,11 @@ class ActiveSupport::TestCase
   fixtures :all
 
   # Add more helper methods to be used by all tests here...
+  def login_as(user)
+    @request.session[:user_id] = user ? users(user).id : nil
+  end
+
+  def login_token
+    @request.env['Authorization'] = 'Token token=MyText'
+  end
 end

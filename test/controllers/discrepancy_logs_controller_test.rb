@@ -3,6 +3,7 @@ require 'test_helper'
 class DiscrepancyLogsControllerTest < ActionController::TestCase
   setup do
     @discrepancy_log = discrepancy_logs(:one)
+    login_as(:one)
   end
 
   test "should get index" do

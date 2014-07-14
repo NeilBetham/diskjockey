@@ -3,6 +3,7 @@ require 'test_helper'
 class DjSchedulesControllerTest < ActionController::TestCase
   setup do
     @dj_schedule = dj_schedules(:one)
+    login_as(:one)
   end
 
   test "should get index" do
