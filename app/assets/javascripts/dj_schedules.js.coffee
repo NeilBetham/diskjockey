@@ -2,10 +2,30 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 $(document).on 'page:load', ->
+  bindEvents()
   setupCalendar()
 
 $(document).ready ->
+  bindEvents()
   setupCalendar()
+
+bindEvents = ->
+  $('#dj_schedule_start_date_1i').on 'change', ->
+    dateChanged()
+
+  $('#dj_schedule_start_date_2i').on 'change', ->
+    dateChanged()
+
+  $('#dj_schedule_start_date_3i').on 'change', ->
+    dateChanged()
+
+dateChanged = ->
+  year = $('#dj_schedule_start_date_1i').val()
+  month = $('#dj_schedule_start_date_2i').val()
+  day = $('#dj_schedule_start_date_3i').val()
+  date = moment(year + '-' + month + '-' + day, 'YYYY-MM-DD')
+  $('#calendar').fullCalendar 'gotoDate', date
+
 
 setupCalendar = ->
   $('#calendar').fullCalendar
