@@ -19,7 +19,8 @@ bindEvents = ->
   $('#dj_schedule_start_date_3i').on 'change', ->
     dateChanged()
 
-  $('#duprestofweek-button').on 'click', ->
+  $('#duprestofweek-button').on 'click', (event)->
+    event.preventDefault()
     dupSundayToRestOfWeek()
     dumpEventsToForm()
 
