@@ -23,11 +23,11 @@ Yo, welcome to the WMTU diskjockey repo. This is the first pass at an all-encomp
  * Keep track of optted in DJs for sub requests
  * Sperate lists based on availability
 
-There's a shit-load of stuff on this list! Most of everything will be implemented server side for the first pass. A large portion of the scaffolding is in place and just needs to be styled and connected with the rest of the application. Once the basic functionality is setup server side, a client side port will be implemented which should make the more advanced features easier to implement and more consistent, think [discourse](http://try.discourse.org). Ambitious, I know, but it should be wicked once it's mostly implemented.
+There's a shit-load of stuff on this list! Most of everything will be implemented server side for the first pass. A large portion of the scaffolding is in place and just needs to be styled and connected with the rest of the application. Once the basic functionality is setup server side, a client side port will be implemented which should make the more advanced features easier to implement and more consistent, think [discourse](http://try.discourse.org). Ambitious, we know, but it should be wicked once it's mostly implemented.
 
 Contributing
 ==========
-If you feel that you'd like to contribute to the project feel free to fork, make your changes, and submit a PR! I'm trying to maintian some semblance of TDD so if you add features make sure they have some testing.
+If you feel that you'd like to contribute to the project feel free to fork, make your changes, and submit a PR! We're trying to maintian some semblance of TDD so if you do add features make sure they have some testing.
 
 
 Thanks for stopping by!
