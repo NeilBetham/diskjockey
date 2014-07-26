@@ -1,1 +1,45 @@
 # TODO
+- App General
+ - [ ] Static nav bar
+ - [ ] User authorizations
+- Dashboard Layout
+ - [ ] Change dashboard based on user role
+  - [ ] Have relevant info for that user based on role
+- Discrepancy Logs
+  - [ ] Style
+- DJ application page
+ - [ ] Style
+ - [ ] Wire up relationships
+ - [ ] Generate access tokens for users who go to signup sessions
+- DJ Schedules page
+ - [ ] Style
+ - [x] Basic calendar setup on new page
+ - [ ] Reusable calendar element for new and edit pages
+ - [ ] Easy scheduling of shows into dj slots
+ - [ ] Notify DJs of upcoming shows via email or text for the first few weeks
+- Shows
+ - [ ] Style
+ - [ ] Maybe more info???
+ - [ ] Easy scheduling of shows into calendar slots
+- Song Logs
+ - [ ] Style
+ - [ ] Accesible from anywhere in app
+ - [ ] Webhook configuration for push updates of song tracking to external services
+ - [ ] Embeddable widget for current song logs
+ - [ ] JSON and XML endpoints for song logs
+- Users
+ - [ ] Style
+ - [ ] Require certain email domain for signup
+  - [ ] Allow outside domains to register but require approval
+ - [ ] DJ Profile page
+ - [ ] Keep track of tenure on radio
+ - [ ] Auto show attendance (based on song logging)
+ - [ ] Discrepancy tracking
+- Sub Lists
+ - [ ] Style
+ - [ ] Allow users to opt in easily
+ - [ ] Send email and or texts to users for sub requests
+- Show Archiving
+ - [ ] Implement secondary service [here](https://github.com/WMTU/diskjockey-show-archiver)
+ - [ ] Hook service in main diskjockey app
+ - [ ] Decide on storage method, S3?, local files?, local object storage?
