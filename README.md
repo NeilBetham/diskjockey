@@ -27,7 +27,7 @@ There's a shit-load of stuff on this list! Most of everything will be implemente
 
 Contributing
 ==========
-If you feel that you'd like to contribute to the project feel free to fork, make your changes, and submit a PR! We're trying to maintian some semblance of TDD so if you do add features make sure they have some testing.
+If you feel that you'd like to contribute to the project feel free to fork, make your changes, and submit a PR! We're trying to maintian some semblance of TDD so if you do add features make sure they have some testing. Oh, and here's the [todo list](https://github.com/WMTU/diskjockey/blob/master/TODO.md)
 
 
 Thanks for stopping by!
