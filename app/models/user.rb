@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
   has_many :song_logs
   has_many :discrepancy_logs
   has_many :user_events
-  has_many :tokens
+  has_many :tokens, dependent: :destroy
   has_and_belongs_to_many :shows
   has_and_belongs_to_many :dj_applications
   has_and_belongs_to_many :sub_lists

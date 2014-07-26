@@ -83,7 +83,6 @@ dupSundayToRestOfWeek = ->
   $('#calendar').fullCalendar 'addEventSource', newEvents
 
 dumpEventsToForm = ->
-  console.log 'Blah'
   events = $('#calendar').fullCalendar 'clientEvents'
   form = $('#new_dj_schedule')
   ul = $('<ul>').attr(
@@ -92,7 +91,7 @@ dumpEventsToForm = ->
   ).appendTo(form)
 
   $('#new_dj_schedule #dj_slots_from_calendar').remove()
-  console.log events
+
   events.map (event, index, array)->
     li = $('<li>')
 
