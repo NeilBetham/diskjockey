@@ -11,6 +11,7 @@
  - [ ] Style
  - [ ] Wire up relationships
  - [ ] Generate access tokens for users who go to signup sessions
+ - [ ] DJ availibility selection
 - DJ Schedules page
  - [ ] Style
  - [x] Basic calendar setup on new page
