@@ -15,6 +15,7 @@ class DjSchedulesController < ApplicationController
   # GET /dj_schedules/new
   def new
     @dj_schedule = DjSchedule.new
+    1.times { @dj_schedule.dj_slots.build}
   end
 
   # GET /dj_schedules/1/edit
@@ -69,6 +70,6 @@ class DjSchedulesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def dj_schedule_params
-      params.require(:dj_schedule).permit(:start_date, :stop_date)
+      params.require(:dj_schedule).permit(:start_date, :stop_date, dj_slots_attributes: [:start_time, :stop_time, :day_of_week])
     end
 end

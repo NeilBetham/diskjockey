@@ -21,6 +21,7 @@ bindEvents = ->
 
   $('#duprestofweek-button').on 'click', ->
     dupSundayToRestOfWeek()
+    dumpEventsToForm()
 
 setupCalendar = ->
   $('#calendar').fullCalendar
@@ -39,6 +40,7 @@ setupCalendar = ->
       copiedEventObject.start = date
       copiedEventObject.end = moment(date).add 'hours', 2
       $('#calendar').fullCalendar('renderEvent', copiedEventObject, true)
+      dumpEventsToForm()
 
   $('#external-events div.external-event').each ->
     eventObject =
@@ -57,6 +59,7 @@ dateChanged = ->
   day = $('#dj_schedule_start_date_3i').val()
   date = moment(year + '-' + month + '-' + day, 'YYYY-MM-DD')
   $('#calendar').fullCalendar 'gotoDate', date
+  $('#calendar').fullCalendar 'removeEvents'
 
 dupSundayToRestOfWeek = ->
   newEvents = []
@@ -77,6 +80,51 @@ dupSundayToRestOfWeek = ->
         end: moment(event.end).add('days', day)
         title: event.title
 
-  console.log newEvents
-
   $('#calendar').fullCalendar 'addEventSource', newEvents
+
+dumpEventsToForm = ->
+  console.log 'Blah'
+  events = $('#calendar').fullCalendar 'clientEvents'
+  form = $('#new_dj_schedule')
+  ul = $('<ul>').attr(
+    id: 'dj_slots_from_calendar'
+    style: 'display:none;'
+  ).appendTo(form)
+
+  $('#new_dj_schedule #dj_slots_from_calendar').remove()
+  console.log events
+  events.map (event, index, array)->
+    li = $('<li>')
+
+    $('<input>').attr(
+      type: 'hidden'
+      name: 'dj_schedule[dj_slots_attributes][' + index + '][start_time(4i)]'
+      value: event.start.hour()
+    ).appendTo li
+
+    $('<input>').attr(
+      type: 'hidden'
+      name: 'dj_schedule[dj_slots_attributes][' + index + '][start_time(5i)]'
+      value: event.start.minute()
+    ).appendTo li
+
+    $('<input>').attr(
+      type: 'hidden'
+      name: 'dj_schedule[dj_slots_attributes][' + index + '][stop_time(4i)]'
+      value: event.end.hour()
+    ).appendTo li
+
+    $('<input>').attr(
+      type: 'hidden'
+      name: 'dj_schedule[dj_slots_attributes][' + index + '][stop_time(5i)]'
+      value: event.end.minute()
+    ).appendTo li
+
+    $('<input>').attr(
+      type: 'hidden'
+      name: 'dj_schedule[dj_slots_attributes][' + index + '][day_of_week]'
+      value: event.start.day()
+    ).appendTo li
+
+    li.appendTo(ul)
+  ul.appendTo(form)
