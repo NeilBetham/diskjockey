@@ -83,6 +83,8 @@ end
 
 gem 'stackprof', '~> 0.2.7'
 
+# Use Humanize Boolean for yes/no booleans
 gem 'humanize_boolean'
 
+# Use Simple Form for form building
 gem 'simple_form'
