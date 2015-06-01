@@ -9,18 +9,12 @@ class DjApplication < ActiveRecord::Base
 
   def genre_array=(array)
     array.reject! { |item| item.blank? }
-    #self.show_genre = array.join ", "
     self.genres = array.map do |genre|
       Genre.where(name: genre.strip).first_or_create!
     end
   end
 
   def genre_array
-    #if self.show_genre.blank?
-    #  []
-    #else
-    #  self.show_genre.split ", "
-    #end
     self.genres.map &:name
   end
 
