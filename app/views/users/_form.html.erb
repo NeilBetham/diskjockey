@@ -1,4 +1,12 @@
-<%= form_for(@user) do |f| %>
+<%= simple_form_for @user, html: { class: 'form-horizontal' },
+        wrapper: :horizontal_form,
+        wrapper_mappings: {
+            check_boxes: :horizontal_radio_and_checkboxes,
+            radio_buttons: :horizontal_radio_and_checkboxes,
+            file: :horizontal_file_input,
+            boolean: :horizontal_boolean
+        } do |f| %>
+
   <% if @user.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
@@ -11,46 +19,25 @@
     </div>
   <% end %>
 
-  <div class="field">
-      <%= f.label :name %><br>
-      <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :email %><br>
-    <%= f.email_field :email %>
-  </div>
-  <div class="field">
-    <%= f.label :phone %><br>
-    <%= f.telephone_field :phone %>
-  </div>
-  <div class="field">
-    <%= f.label :phone_carrier %><br>
-    <%= f.text_field :phone_carrier %>
-  </div>
-  <div class="field">
-      <%= f.label :relevant_experience %><br>
-      <%= f.text_area :relevant_experience %>
-  </div>
-  <div class="field">
-      <%= f.label :employment_status %><br>
-      <%= f.select :employment_status, User::STATUSES.map(&:capitalize) %>
-  </div>
-  <div class="field">
-      <%= f.label :station_staff %><br>
-      <%= f.label :station_staff, "Yes" %>
-      <%= f.radio_button :station_staff, true, value: true %>
-      <%= f.label :station_staff, "No" %>
-      <%= f.radio_button :station_staff, false, value: false %>
-  </div>
-  <div class="field">
-    <%= f.label :password %><br>
-    <%= f.password_field :password %>
-  </div>
-  <div class="field">
-    <%= f.label :password_confirmation %><br>
-    <%= f.password_field :password_confirmation %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <%= f.input :name, wrapper_html: { class: 'field' } %>
+
+  <%= f.input :email, wrapper_html: { class: 'field' } %>
+
+  <%= f.input :phone, wrapper_html: { class: 'field' } %>
+
+  <%= f.input :phone_carrier, collection: carrier_collection, wrapper_html: { class: 'field' } %>
+
+  <%= f.input :relevant_experience, wrapper_html: { class: 'field' } %>
+
+  <%= f.input :employment_status, collection: User::STATUSES.map(&:capitalize), wrapper_html: { class: 'field' } %>
+
+  <%= f.input :station_staff, as: :radio_buttons, wrapper_html: { class: 'field' } %>
+
+  <%= f.input :password, wrapper_html: { class: 'field' } %>
+
+  <%= f.input :password_confirmation, wrapper_html: { class: 'field' } %>
+
+  <div class="form-group actions">
+    <%= f.button :submit %>
   </div>
 <% end %>
