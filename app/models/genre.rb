@@ -1,10 +1,9 @@
 class Genre < ActiveRecord::Base
     GENRES = %i(
       Alternative Ambient Blues Country
-      Electronic Folk Hits Indie
-      Jazz Hip-Hop Local Metal
-      Punk Reggae Rock Ska
-      Talk Urban Eclectic World
+      Eclectic Electronic Folk Hip-Hop
+      Hits Indie Jazz Local Metal Punk
+      Reggae Rock Ska Talk Urban World
       Other
     )
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150601004301) do
+ActiveRecord::Schema.define(version: 20150601214123) do
 
   create_table "discrepancy_logs", force: true do |t|
     t.integer  "user_id"
@@ -41,7 +41,6 @@ ActiveRecord::Schema.define(version: 20150601004301) do
   create_table "dj_applications", force: true do |t|
     t.string   "show_name"
     t.text     "bands_or_artists_played"
-    t.string   "show_genre"
     t.text     "show_blurb"
     t.datetime "training_time"
     t.datetime "created_at"

@@ -1,4 +1,6 @@
 class DjApplication < ActiveRecord::Base
+  attr_reader :genre_string
+
   validates :show_name, :show_blurb, :genre_array, presence: true
 
   has_and_belongs_to_many :users
@@ -7,18 +9,22 @@ class DjApplication < ActiveRecord::Base
 
   def genre_array=(array)
     array.reject! { |item| item.blank? }
-    self.show_genre = array.join ", "
-    #self.genres = array.each do |name|
-    #  Genre.where(name: name.strip).first_or_create!
-    #end
+    #self.show_genre = array.join ", "
+    self.genres = array.map do |genre|
+      Genre.where(name: genre.strip).first_or_create!
+    end
   end
 
   def genre_array
-    if self.show_genre.blank?
-      []
-    else
-      self.show_genre.split ", "
-    end
-    #self.genres.map(&:name)
+    #if self.show_genre.blank?
+    #  []
+    #else
+    #  self.show_genre.split ", "
+    #end
+    self.genres.map &:name
+  end
+
+  def genre_string
+    self.genres.map(&:name).sort.join(", ")
   end
 end
