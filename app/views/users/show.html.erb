@@ -1,6 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>Name:</strong>
+  <%= @user.name %>
+</p>
+
+<p>
   <strong>Email:</strong>
   <%= @user.email %>
 </p>
@@ -16,8 +21,23 @@
 </p>
 
 <p>
+  <strong>Relevant experience:</strong>
+  <%= @user.relevant_experience %>
+</p>
+
+<p>
   <strong>Role:</strong>
-  <%= @user.role %>
+  <%= @user.role.upcase %>
+</p>
+
+<p>
+    <strong>Status:</strong>
+    <%= @user.employment_status.capitalize %>
+</p>
+
+<p>
+    <strong>Station staff:</strong>
+    <%= @user.station_staff.humanize %>
 </p>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |

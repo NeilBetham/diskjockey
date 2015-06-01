@@ -69,6 +69,6 @@ class DjApplicationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def dj_application_params
-      params.require(:dj_application).permit(:show_name, :bands_or_artists_played, :show_genre, :show_blurb, :training_time)
+      params.require(:dj_application).permit(:show_name, :bands_or_artists_played, :show_blurb, :training_time, :genre_array => [])
     end
 end

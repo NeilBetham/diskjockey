@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140713215250) do
+ActiveRecord::Schema.define(version: 20150601004301) do
 
   create_table "discrepancy_logs", force: true do |t|
     t.integer  "user_id"
@@ -27,6 +27,16 @@ ActiveRecord::Schema.define(version: 20140713215250) do
 
   add_index "discrepancy_logs", ["show_id"], name: "index_discrepancy_logs_on_show_id"
   add_index "discrepancy_logs", ["user_id"], name: "index_discrepancy_logs_on_user_id"
+
+  create_table "dj_application_genres", force: true do |t|
+    t.integer  "dj_application_id"
+    t.integer  "genre_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "dj_application_genres", ["dj_application_id"], name: "index_dj_application_genres_on_dj_application_id"
+  add_index "dj_application_genres", ["genre_id"], name: "index_dj_application_genres_on_genre_id"
 
   create_table "dj_applications", force: true do |t|
     t.string   "show_name"
@@ -60,6 +70,12 @@ ActiveRecord::Schema.define(version: 20140713215250) do
   end
 
   add_index "dj_slots", ["dj_schedule_id"], name: "index_dj_slots_on_dj_schedule_id"
+
+  create_table "genres", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "show_archives", force: true do |t|
     t.integer  "show_id"
@@ -160,6 +176,7 @@ ActiveRecord::Schema.define(version: 20140713215250) do
     t.boolean  "station_staff",       default: false
     t.text     "confirmation_token"
     t.boolean  "confirmed",           default: false
+    t.string   "name"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

@@ -6,9 +6,9 @@ class User < ActiveRecord::Base
 
   has_secure_password
 
-  validates :email, :phone, :phone_carrier, :role, presence: true
+  validates :name, :email, :phone, :phone_carrier, :role, :employment_status, presence: true
   validates :email, uniqueness: true
-  validates :email, format: { with: /@mtu.edu/ }
+  validates :email, format: { with: /@mtu.edu/ }, unless: :status_local?
 
   has_many :song_logs
   has_many :discrepancy_logs
@@ -17,6 +17,10 @@ class User < ActiveRecord::Base
   has_and_belongs_to_many :shows
   has_and_belongs_to_many :dj_applications
   has_and_belongs_to_many :sub_lists
+
+  def status_local?
+      employment_status == "local"
+  end
 
   private
     def set_role

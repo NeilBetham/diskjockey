@@ -6,7 +6,7 @@
  - [ ] Change dashboard based on user role
   - [ ] Have relevant info for that user based on role
 - Discrepancy Logs
-  - [ ] Style
+ - [ ] Style
 - DJ application page
  - [ ] Style
  - [ ] Wire up relationships
@@ -30,7 +30,7 @@
  - [ ] JSON and XML endpoints for song logs
 - Users
  - [ ] Style
- - [ ] Require certain email domain for signup
+ - [x] Require certain email domain for signup
   - [ ] Allow outside domains to register but require approval
  - [ ] DJ Profile page
  - [ ] Keep track of tenure on radio

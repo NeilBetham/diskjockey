@@ -31,6 +31,7 @@ setupCalendar = ->
     editable: true
     allDaySlot: false
     scrollTime: '00:00:00'
+    snapDuration: '02:00:00'
     contentHeight: 1050
     header: false
     slotEventOverlap: false

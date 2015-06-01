@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.1.1'
+gem 'rails', '4.1.2'
 
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', '~> 1.3.9'
@@ -80,3 +80,9 @@ gem 'active_model_serializers', '~> 0.8.1'
 group :development, :test do
   gem 'railroady'
 end
+
+gem 'stackprof', '~> 0.2.7'
+
+gem 'humanize_boolean'
+
+gem 'simple_form'

@@ -1,4 +1,12 @@
-<%= form_for(@dj_application) do |f| %>
+<%= simple_form_for @dj_application, html: { class: 'form-horizontal' },
+        wrapper: :horizontal_form,
+        wrapper_mappings: {
+            check_boxes: :horizontal_radio_and_checkboxes,
+            radio_buttons: :horizontal_radio_and_checkboxes,
+            file: :horizontal_file_input,
+            boolean: :horizontal_boolean
+        } do |f| %>
+
   <% if @dj_application.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@dj_application.errors.count, "error") %> prohibited this dj_application from being saved:</h2>
@@ -11,27 +19,24 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :show_name %><br>
-    <%= f.text_field :show_name %>
-  </div>
-  <div class="field">
-    <%= f.label :bands_or_artists_played %><br>
-    <%= f.text_area :bands_or_artists_played %>
-  </div>
-  <div class="field">
-    <%= f.label :show_genre %><br>
-    <%= f.text_field :show_genre %>
-  </div>
-  <div class="field">
-    <%= f.label :show_blurb %><br>
-    <%= f.text_area :show_blurb %>
-  </div>
-  <div class="field">
-    <%= f.label :training_time %><br>
-    <%= f.datetime_select :training_time %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <%= f.input :show_name, wrapper_html: { class: 'field' } %>
+
+  <%= f.input :bands_or_artists_played,
+        label: 'Bands/artists you might play',
+        placeholder: 'Examples of bands/artists you might play on the show',
+        wrapper_html: { class: 'field' } %>
+
+  <%= f.input :genre_array, as: :check_boxes, collection: Genre::GENRES,
+        label: 'Show genre(s)',
+        item_wrapper_class: 'checkbox-inline',
+        wrapper_html: { class: 'field' } %>
+
+  <%= f.input :show_blurb, wrapper_html: { class: 'field' },
+        placeholder: 'Brief description of the show for promotional purposes'%>
+
+  <%= f.input :training_time, class: 'inline', wrapper_html: { class: 'field' } %>
+
+  <div class="form-group actions">
+    <%= f.button :submit, "Submit DJ Application" %>
   </div>
 <% end %>
