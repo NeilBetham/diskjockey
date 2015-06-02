@@ -19,11 +19,11 @@
     </div>
   <% end %>
 
-  <%= f.input :name, wrapper_html: { class: 'field' } %>
+  <%= f.input :name, placeholder: 'Full name', wrapper_html: { class: 'field' } %>
 
-  <%= f.input :email, wrapper_html: { class: 'field' } %>
+  <%= f.input :email, placeholder: 'Email address', wrapper_html: { class: 'field' } %>
 
-  <%= f.input :phone, wrapper_html: { class: 'field' } %>
+  <%= f.input :phone, placeholder: '555-555-5555', pattern: '\d{3}[\-]\d{3}[\-]\d{4}', wrapper_html: { class: 'field' } %>
 
   <%= f.input :phone_carrier, collection: carrier_collection, wrapper_html: { class: 'field' } %>
 
