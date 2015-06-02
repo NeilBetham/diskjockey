@@ -19,11 +19,11 @@ class User < ActiveRecord::Base
   has_and_belongs_to_many :sub_lists
 
   def status_local?
-      employment_status == "local"
+      employment_status.downcase == "local"
   end
 
   private
     def set_role
-      self.role = 'dj'
+      self.role = 'dj' unless self.role
     end
 end

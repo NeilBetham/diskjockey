@@ -5,26 +5,31 @@ class DjApplicationsController < ApplicationController
   # GET /dj_applications.json
   def index
     @dj_applications = DjApplication.all
+    authorize! :index, DjApplication
   end
 
   # GET /dj_applications/1
   # GET /dj_applications/1.json
   def show
+    authorize! :show, @dj_application
   end
 
   # GET /dj_applications/new
   def new
     @dj_application = DjApplication.new
+    authorize! :new, DjApplication
   end
 
   # GET /dj_applications/1/edit
   def edit
+    authorize! :edit, @dj_application
   end
 
   # POST /dj_applications
   # POST /dj_applications.json
   def create
     @dj_application = DjApplication.new(dj_application_params)
+    authorize! :create, DjApplication
 
     respond_to do |format|
       if @dj_application.save
@@ -40,6 +45,8 @@ class DjApplicationsController < ApplicationController
   # PATCH/PUT /dj_applications/1
   # PATCH/PUT /dj_applications/1.json
   def update
+    authorize! :update, @dj_application
+
     respond_to do |format|
       if @dj_application.update(dj_application_params)
         format.html { redirect_to @dj_application, notice: 'Dj application was successfully updated.' }
@@ -54,6 +61,8 @@ class DjApplicationsController < ApplicationController
   # DELETE /dj_applications/1
   # DELETE /dj_applications/1.json
   def destroy
+    authorize! :destroy, @dj_application
+
     @dj_application.destroy
     respond_to do |format|
       format.html { redirect_to dj_applications_url, notice: 'Dj application was successfully destroyed.' }
