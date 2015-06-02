@@ -1,7 +1,7 @@
 class DjApplication < ActiveRecord::Base
   attr_reader :genre_string
 
-  validates :show_name, :show_blurb, :genre_array, presence: true
+  validates :show_name, :show_blurb, :genres, presence: true
 
   has_and_belongs_to_many :users
   has_many :dj_application_genres

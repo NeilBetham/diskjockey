@@ -27,6 +27,7 @@
         wrapper_html: { class: 'field' } %>
 
   <%= f.input :genre_array, as: :check_boxes, collection: Genre::GENRES,
+        required: true,
         label: 'Show genre(s)',
         item_wrapper_class: 'checkbox-inline',
         wrapper_html: { class: 'field' } %>
