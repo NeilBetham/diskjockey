@@ -3,13 +3,13 @@
 one:
   show_name: MyString
   bands_or_artists_played: MyText
-  show_genre: MyString
+  genre_array: Other
   show_blurb: MyText
   training_time: 2014-07-12 15:06:53
 
 two:
   show_name: MyString
   bands_or_artists_played: MyText
-  show_genre: MyString
+  genre_array: Other
   show_blurb: MyText
   training_time: 2014-07-12 15:06:53

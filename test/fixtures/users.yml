@@ -2,16 +2,20 @@
 
 one:
   id: 1
+  name: MyName
   email: MyString@mtu.edu
   phone: 444-444-4444
   phone_carrier: MyString
+  employment_status: student
   password_digest: MyString
   role: MyString
 
 two:
   id: 2
+  name: MyName
   email: MyString2@mtu.edu
   phone: 555-555-5555
   phone_carrier: MyString
+  employment_status: student
   password_digest: $2a$10$2oNa2P0epxNZ.sNbwRKDmelfXNn0X6Va39LpJzk8AfwK.y9v1.Jeq
   role: MyString
