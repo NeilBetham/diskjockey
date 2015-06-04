@@ -21,7 +21,7 @@ Yo, welcome to the WMTU diskjockey repo. This is the first pass at an all-encomp
  * Keep track of fcc discrepancy logs (swearing and the like)
 * Sub Lists
  * Keep track of optted in DJs for sub requests
- * Sperate lists based on availability
+ * Separate lists based on availability
 
 There's a shit-load of stuff on this list! Most of everything will be implemented server side for the first pass. A large portion of the scaffolding is in place and just needs to be styled and connected with the rest of the application. Once the basic functionality is setup server side, a client side port will be implemented which should make the more advanced features easier to implement and more consistent, think [discourse](http://try.discourse.org). Ambitious, we know, but it should be wicked once it's mostly implemented.
 
