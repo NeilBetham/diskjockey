@@ -1,11 +1,11 @@
 <%= simple_form_for @user, html: { class: 'form-horizontal' },
-        wrapper: :horizontal_form,
-        wrapper_mappings: {
-            check_boxes: :horizontal_radio_and_checkboxes,
-            radio_buttons: :horizontal_radio_and_checkboxes,
-            file: :horizontal_file_input,
-            boolean: :horizontal_boolean
-        } do |f| %>
+  wrapper: :horizontal_form,
+  wrapper_mappings: {
+    check_boxes: :horizontal_radio_and_checkboxes,
+    radio_buttons: :horizontal_radio_and_checkboxes,
+    file: :horizontal_file_input,
+    boolean: :horizontal_boolean
+  } do |f| %>
 
   <% if @user.errors.any? %>
     <div id="error_explanation">
@@ -28,6 +28,10 @@
   <%= f.input :phone_carrier, collection: carrier_collection, wrapper_html: { class: 'field' } %>
 
   <%= f.input :relevant_experience, wrapper_html: { class: 'field' } %>
+
+  <% if can? :manage, User %>
+    <%= f.input :role, collection: User::ROLES, wrapper_html: { class: 'field' } %>
+  <% end %>
 
   <%= f.input :employment_status, collection: User::STATUSES.map(&:capitalize), wrapper_html: { class: 'field' } %>
 
