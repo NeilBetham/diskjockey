@@ -1,1 +1,0 @@
-DiskjockeyClient.ApplicationAdapter = DS.FixtureAdapter;

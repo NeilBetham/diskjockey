@@ -6,7 +6,7 @@ one:
   email: MyString@mtu.edu
   phone: 444-444-4444
   phone_carrier: MyString
-  role: MyString
+  role: admin
   employment_status: MyString
   station_staff: false
   password_digest: MyString
