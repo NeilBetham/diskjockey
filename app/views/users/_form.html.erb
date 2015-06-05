@@ -25,7 +25,7 @@
 
   <%= f.input :phone, placeholder: '555-555-5555', pattern: '\d{3}[\-]\d{3}[\-]\d{4}', wrapper_html: { class: 'field' } %>
 
-  <%= f.input :phone_carrier, collection: ['asdfd'], wrapper_html: { class: 'field' } %>
+  <%= f.input :phone_carrier, collection: carrier_collection, wrapper_html: { class: 'field' } %>
 
   <%= f.input :relevant_experience, wrapper_html: { class: 'field' } %>
 
