@@ -9,7 +9,7 @@ carriers:
     name: Ameritech
     value: '@paging.acswireless.com'
   at&t:
-    name: AT&T
+    name: 'AT&T'
     value: '@txt.att.net'
   bell-atlantic:
     name: Bell Atlantic

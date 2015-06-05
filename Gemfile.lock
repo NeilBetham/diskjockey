@@ -1,7 +1,6 @@
 GIT
-  remote: https://github.com/brendanlim/sms-fu.git
-  revision: 2936f6dbb34b2b658c48bf2e527de9433188b604
-  ref: 2936f6dbb34b2b658c48bf2e527de9433188b604
+  remote: https://github.com/WMTU/sms-fu.git
+  revision: 7b69870386a4185d2d50ccfdda208333203a2da1
   specs:
     sms_fu (1.1.1)
 
@@ -42,6 +41,8 @@ GEM
     bootstrap-sass (3.2.0.2)
       sass (~> 3.2)
     builder (3.2.2)
+    byebug (4.0.5)
+      columnize (= 0.9.0)
     cancancan (1.8.4)
     capistrano (3.4.0)
       i18n
@@ -61,6 +62,7 @@ GEM
       execjs
     coffee-script-source (1.9.1.1)
     colorize (0.7.7)
+    columnize (0.9.0)
     css_parser (1.3.6)
       addressable
     erubis (2.7.0)
@@ -167,7 +169,6 @@ GEM
       rack (~> 1.4)
       rack-protection (~> 1.4)
       tilt (>= 1.3, < 3)
-    spring (1.3.6)
     sprockets (2.12.3)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -206,6 +207,7 @@ DEPENDENCIES
   active_model_serializers (~> 0.8.1)
   bcrypt (~> 3.1.7)
   bootstrap-sass (~> 3.2.0.0)
+  byebug
   cancancan (~> 1.8.4)
   capistrano-rails
   coffee-rails (~> 4.0.0)
@@ -228,11 +230,10 @@ DEPENDENCIES
   sdoc (~> 0.4.0)
   simple_form
   sms_fu!
-  spring
   sqlite3 (~> 1.3.9)
   stackprof (~> 0.2.7)
   turbolinks (~> 2.2.2)
   uglifier (>= 1.3.0)
 
 BUNDLED WITH
-   1.10.2
+   1.10.3

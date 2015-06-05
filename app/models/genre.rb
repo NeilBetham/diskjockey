@@ -7,6 +7,5 @@ class Genre < ActiveRecord::Base
       Other
     )
 
-    has_many :dj_application_genres
-    has_many :dj_applications, through: :dj_application_genres
+    has_and_belongs_to_many :dj_applications
 end

@@ -1,4 +1,3 @@
-include SMSFuHelper
-
 module ApplicationHelper
+  include SMSFuHelper
 end

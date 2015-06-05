@@ -36,7 +36,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-gem 'spring',        group: :development
+#gem 'spring',        group: :development
 
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
@@ -48,13 +48,13 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'capistrano-rails', group: :development
 
 # Use debugger
-# gem 'debugger', group: [:development, :test]
+gem 'byebug', group: [:development, :test]
 
 # Google for authentication maybe later
 #gem 'google-api-client', '~> 0.7.1'
 
 # Send notifications via SMS
-gem 'sms_fu', git: 'https://github.com/brendanlim/sms-fu.git', ref: '2936f6dbb34b2b658c48bf2e527de9433188b604'
+gem 'sms_fu', git: 'https://github.com/WMTU/sms-fu.git'
 gem 'pony', '~> 1.9'
 
 # Background tasks handled by resque

@@ -3,6 +3,7 @@ require 'test_helper'
 class DjApplicationsControllerTest < ActionController::TestCase
   setup do
     @dj_application = dj_applications(:one)
+    @genre = genres(:one)
     login_as(:one)
   end
 
@@ -19,7 +20,7 @@ class DjApplicationsControllerTest < ActionController::TestCase
 
   test "should create dj_application" do
     assert_difference('DjApplication.count') do
-      post :create, dj_application: { bands_or_artists_played: @dj_application.bands_or_artists_played, show_blurb: @dj_application.show_blurb, show_name: @dj_application.show_name, training_time: @dj_application.training_time }
+      post :create, dj_application: { bands_or_artists_played: @dj_application.bands_or_artists_played, show_blurb: @dj_application.show_blurb, show_name: @dj_application.show_name, training_time: @dj_application.training_time, genres: @genre }
     end
 
     assert_redirected_to dj_application_path(assigns(:dj_application))
@@ -36,7 +37,7 @@ class DjApplicationsControllerTest < ActionController::TestCase
   end
 
   test "should update dj_application" do
-    patch :update, id: @dj_application, dj_application: { bands_or_artists_played: @dj_application.bands_or_artists_played, show_blurb: @dj_application.show_blurb, show_name: @dj_application.show_name, training_time: @dj_application.training_time }
+    patch :update, id: @dj_application, dj_application: { bands_or_artists_played: @dj_application.bands_or_artists_played, show_blurb: @dj_application.show_blurb, show_name: @dj_application.show_name, training_time: @dj_application.training_time, genres: @genre }
     assert_redirected_to dj_application_path(assigns(:dj_application))
   end
 

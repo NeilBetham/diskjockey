@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150602190940) do
+ActiveRecord::Schema.define(version: 20150605023622) do
 
   create_table "discrepancy_logs", force: true do |t|
     t.integer  "user_id"
@@ -28,16 +28,6 @@ ActiveRecord::Schema.define(version: 20150602190940) do
   add_index "discrepancy_logs", ["show_id"], name: "index_discrepancy_logs_on_show_id"
   add_index "discrepancy_logs", ["user_id"], name: "index_discrepancy_logs_on_user_id"
 
-  create_table "dj_application_genres", force: true do |t|
-    t.integer  "dj_application_id"
-    t.integer  "genre_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "dj_application_genres", ["dj_application_id"], name: "index_dj_application_genres_on_dj_application_id"
-  add_index "dj_application_genres", ["genre_id"], name: "index_dj_application_genres_on_genre_id"
-
   create_table "dj_applications", force: true do |t|
     t.string   "show_name"
     t.text     "bands_or_artists_played"
@@ -46,6 +36,14 @@ ActiveRecord::Schema.define(version: 20150602190940) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "dj_applications_genres", id: false, force: true do |t|
+    t.integer "dj_application_id"
+    t.integer "genre_id"
+  end
+
+  add_index "dj_applications_genres", ["dj_application_id"], name: "index_dj_applications_genres_on_dj_application_id"
+  add_index "dj_applications_genres", ["genre_id"], name: "index_dj_applications_genres_on_genre_id"
 
   create_table "dj_applications_users", id: false, force: true do |t|
     t.integer "dj_application_id"
