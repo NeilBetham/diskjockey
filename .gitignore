@@ -16,6 +16,7 @@ capybara-*.html
 rerun.txt
 pickle-email-*.html
 .project
+.DS_Store
 config/initializers/secret_token.rb
 config/database.yml
 config/diskjockey-config.yml
