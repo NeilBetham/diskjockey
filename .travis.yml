@@ -1,7 +1,7 @@
 language: ruby
 cache: bundler
 rvm:
-  - 2.1.2
+  - 2.2.2
 before_script:
   - cp config/database.yml.example config/database.yml
   - cp config/diskjockey-config.yml.example config/diskjockey-config.yml
