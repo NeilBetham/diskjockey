@@ -5,4 +5,3 @@ rvm:
 before_script:
   - cp config/database.yml.example config/database.yml
   - cp config/diskjockey-config.yml.example config/diskjockey-config.yml
-  - bundle exec rake db:migrate

@@ -6,13 +6,6 @@ class DjApplication < ActiveRecord::Base
   has_and_belongs_to_many :users
   has_and_belongs_to_many :genres
 
-  def genre_array=(array)
-    array.reject! { |item| item.blank? }
-    self.genres = array.map do |genre|
-      Genre.where(name: genre.strip).first_or_create!
-    end
-  end
-
   def genre_array
     self.genres.map &:name
   end
