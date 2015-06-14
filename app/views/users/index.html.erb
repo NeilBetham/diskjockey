@@ -1,6 +1,6 @@
 <h1>Listing Users</h1>
 
-<table class="table">
+<table class="table table-striped">
   <thead>
     <tr>
       <th>Name</th>
@@ -22,9 +22,21 @@
         <td><%= user.role.upcase %></td>
         <td><%= user.employment_status.capitalize %></td>
         <td><%= user.station_staff.humanize %></td>
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Delete', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>
+          <%= link_to user, class: 'btn btn-primary btn-xs' do %>
+            <span class="glyphicon glyphicon-user"></span> Show
+          <% end %>
+        </td>
+        <td>
+          <%= link_to edit_user_path(user), class: 'btn btn-info btn-xs' do %>
+            <span class="glyphicon glyphicon-pencil"></span> Edit
+          <% end %>
+        </td>
+        <td>
+          <%= link_to user, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-xs' do %>
+            <span class="glyphicon glyphicon-remove"></span> Delete
+          <% end %>
+        </td>
       </tr>
     <% end %>
   </tbody>
@@ -32,4 +44,6 @@
 
 <br>
 
-<%= link_to 'New User', new_user_path %>
+<%= link_to new_user_path, class: 'btn btn-success' do %>
+  <span class="glyphicon glyphicon-plus"></span> New User
+<% end %>

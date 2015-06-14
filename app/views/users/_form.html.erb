@@ -19,29 +19,37 @@
     </div>
   <% end %>
 
-  <%= f.input :name, placeholder: 'Full name', wrapper_html: { class: 'field' } %>
+  <%= f.input :name, placeholder: 'Full name' %>
 
-  <%= f.input :email, placeholder: 'Email address', wrapper_html: { class: 'field' } %>
+  <%= f.input :email, placeholder: 'Email address' %>
 
-  <%= f.input :phone, placeholder: '555-555-5555', pattern: '\d{3}[\-]\d{3}[\-]\d{4}', wrapper_html: { class: 'field' } %>
+  <%= f.input :phone, placeholder: '555-555-5555', pattern: '\d{3}[\-]\d{3}[\-]\d{4}' %>
 
-  <%= f.input :phone_carrier, collection: carrier_collection, wrapper_html: { class: 'field' } %>
+  <%= f.input :phone_carrier, collection: carrier_collection %>
 
-  <%= f.input :relevant_experience, wrapper_html: { class: 'field' } %>
+  <%= f.input :relevant_experience %>
 
   <% if can? :manage, User %>
-    <%= f.input :role, collection: User::ROLES, wrapper_html: { class: 'field' } %>
+    <%= f.input :role, collection: User::ROLES %>
   <% end %>
 
-  <%= f.input :employment_status, collection: User::STATUSES.map(&:capitalize), wrapper_html: { class: 'field' } %>
+  <%= f.input :employment_status, collection: User::STATUSES.map(&:capitalize) %>
 
-  <%= f.input :station_staff, as: :radio_buttons, wrapper_html: { class: 'field' } %>
+  <%= f.input :station_staff, as: :radio_buttons %>
 
-  <%= f.input :password, wrapper_html: { class: 'field' } %>
+  <%= f.input :password %>
 
-  <%= f.input :password_confirmation, wrapper_html: { class: 'field' } %>
+  <%= f.input :password_confirmation %>
 
   <div class="form-group actions">
-    <%= f.button :submit %>
+    <% if f.object.new_record? %>
+      <%= button_tag(type: 'submit', class: "btn btn-primary") do %>
+        <span class="glyphicon glyphicon-floppy-disk"></span> Create User
+      <% end %>
+    <% else %>
+      <%= button_tag(type: 'submit', class: "btn btn-primary") do %>
+        <span class="glyphicon glyphicon-floppy-disk"></span> Update User
+      <% end %>
+    <% end %>
   </div>
 <% end %>
