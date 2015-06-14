@@ -22,6 +22,7 @@
  - [ ] Style
  - [ ] Maybe more info???
  - [ ] Easy scheduling of shows into calendar slots
+ - [ ] Shows need to be broken down more granularly to allow for sub DJs
 - Song Logs
  - [ ] Style
  - [ ] Accesible from anywhere in app

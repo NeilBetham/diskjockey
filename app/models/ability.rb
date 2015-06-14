@@ -11,6 +11,7 @@ class Ability
       elsif user.role == "dj"
         can [:show, :edit, :update, :destroy], User, id: user.id
         can [:show, :new, :create], DjApplication, user_id: user.id
+        can [:create], SongLog
       elsif user.role == "inactive"
 
       elsif user.role == "blocked"

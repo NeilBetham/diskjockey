@@ -18,11 +18,25 @@ class SongLogsControllerTest < ActionController::TestCase
   end
 
   test "should create song_log" do
+    login_as(:one)
+
     assert_difference('SongLog.count') do
       post :create, song_log: { album: @song_log.album, artist: @song_log.artist, cd_number: @song_log.cd_number, genre: @song_log.genre, location: @song_log.location, score: @song_log.score, song_name: @song_log.song_name, user_id: @song_log.user_id }
     end
 
     assert_redirected_to song_log_path(assigns(:song_log))
+  end
+
+
+  # TODO Setup fixtures too allow for checking of date time check code
+  test "should not create song_log" do
+    login_as(:two)
+
+    assert_no_difference('SongLog.count') do
+      post :create, song_log: { album: @song_log.album, artist: @song_log.artist, cd_number: @song_log.cd_number, genre: @song_log.genre, location: @song_log.location, score: @song_log.score, song_name: @song_log.song_name, user_id: @song_log.user_id }
+    end
+
+    assert_redirected_to root_path
   end
 
   test "should show song_log" do
