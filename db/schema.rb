@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150605023622) do
+ActiveRecord::Schema.define(version: 20150614223543) do
 
   create_table "discrepancy_logs", force: true do |t|
     t.integer  "user_id"
@@ -27,16 +27,6 @@ ActiveRecord::Schema.define(version: 20150605023622) do
 
   add_index "discrepancy_logs", ["show_id"], name: "index_discrepancy_logs_on_show_id"
   add_index "discrepancy_logs", ["user_id"], name: "index_discrepancy_logs_on_user_id"
-
-  create_table "dj_application_genres", force: true do |t|
-    t.integer  "dj_application_id"
-    t.integer  "genre_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "dj_application_genres", ["dj_application_id"], name: "index_dj_application_genres_on_dj_application_id"
-  add_index "dj_application_genres", ["genre_id"], name: "index_dj_application_genres_on_genre_id"
 
   create_table "dj_applications", force: true do |t|
     t.string   "show_name"
@@ -78,6 +68,14 @@ ActiveRecord::Schema.define(version: 20150605023622) do
 
   add_index "dj_slots", ["dj_schedule_id"], name: "index_dj_slots_on_dj_schedule_id"
 
+  create_table "dj_slots_users", id: false, force: true do |t|
+    t.integer "dj_slot_id"
+    t.integer "user_id"
+  end
+
+  add_index "dj_slots_users", ["dj_slot_id"], name: "index_dj_slots_users_on_dj_slot_id"
+  add_index "dj_slots_users", ["user_id"], name: "index_dj_slots_users_on_user_id"
+
   create_table "genres", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
@@ -107,10 +105,8 @@ ActiveRecord::Schema.define(version: 20150605023622) do
     t.text     "show_blurb"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "dj_slot_id"
   end
 
-  add_index "shows", ["dj_slot_id"], name: "index_shows_on_dj_slot_id"
   add_index "shows", ["user_id"], name: "index_shows_on_user_id"
 
   create_table "shows_users", id: false, force: true do |t|

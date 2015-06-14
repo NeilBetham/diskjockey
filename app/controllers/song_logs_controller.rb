@@ -19,12 +19,26 @@ class SongLogsController < ApplicationController
 
   # GET /song_logs/1/edit
   def edit
+    authorize! :edit, SongLog
   end
 
   # POST /song_logs
   # POST /song_logs.json
   def create
-    @song_log = SongLog.new(song_log_params)
+    authorize! :create, SongLog
+
+    # Check to see that a user can log songs
+    #TODO How to handle sub DJs
+    unless can? :manage, :all
+      redirect_to new_song_log_path, notice: "You don't have a show to log songs to" if current_user.current_show.nil?
+      show = current_user.current_show
+      unless show.day_of_week == Date.today.wday && Time.now.between?(show.start_time - 10.minutes, show.stop_time + 10.minutes)
+        redirect_to new_song_log_path, notice: "You can only submit song logs while your show is in progress"
+      end
+      @song_log = show.song_logs.new(song_log_params)
+    else
+      @song_log = SongLog.new(song_log_params)
+    end
 
     respond_to do |format|
       if @song_log.save
@@ -40,6 +54,8 @@ class SongLogsController < ApplicationController
   # PATCH/PUT /song_logs/1
   # PATCH/PUT /song_logs/1.json
   def update
+    authorize! :update, @song_log
+
     respond_to do |format|
       if @song_log.update(song_log_params)
         format.html { redirect_to @song_log, notice: 'Song log was successfully updated.' }
@@ -54,6 +70,8 @@ class SongLogsController < ApplicationController
   # DELETE /song_logs/1
   # DELETE /song_logs/1.json
   def destroy
+    authorize! :destroy, @song_log
+
     @song_log.destroy
     respond_to do |format|
       format.html { redirect_to song_logs_url, notice: 'Song log was successfully destroyed.' }
