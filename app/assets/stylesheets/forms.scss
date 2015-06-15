@@ -1,0 +1,40 @@
+div.form-group {
+  margin-bottom: .5rem;
+
+  > label {
+    display: inline-block;
+
+    height: 100%;
+
+    padding-right: 1%;
+
+    text-align: right;
+
+    vertical-align: text-top;
+
+    width: 24%;
+  }
+
+  div {
+    display: inline-block;
+
+    width: 75%;
+
+    input[type="text"],
+    input[type="password"],
+    input[type="email"],
+    input[type="tel"]{
+      width: 100%;
+    }
+
+    span.radio {
+      padding-right: 1rem;
+
+      label {
+        input {
+          display: inline;
+        }
+      }
+    }
+  }
+}
